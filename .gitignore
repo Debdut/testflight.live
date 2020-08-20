@@ -1,0 +1,9 @@
+node_modules
+build
+*.log
+*.lock
+.DS_Store
+.vscode
+*-lock.*
+build
+size-plugin.json

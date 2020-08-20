@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind utilities;
+
+html,
+body {
+  @apply w-full h-full p-0 m-0 font-normal antialiased bg-gray-100;
+}
+
+* {
+  @apply box-border;
+}
+
+.container {
+  @apply w-full px-4 m-auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+h1,
+.h1 {
+  @apply text-6xl font-bold;
+}
+
+h2,
+.h2 {
+  @apply text-4xl font-bold;
+}
+
+h3,
+.h3 {
+  @apply text-2xl font-bold;
+}
+
+p, span {
+  @apply text-xs subpixel-antialiased;
+}
+
+a {
+  @apply text-sm font-bold;
+  color: #0366d6;
+}
+
+a:hover {
+  text-decoration: underline;
+}

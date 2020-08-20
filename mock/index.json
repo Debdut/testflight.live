@@ -1,0 +1,176 @@
+{
+  "apps": [
+    {
+      "id": 1,
+      "name": "Everlog Journal",
+      "short": "A Modern Journal",
+      "description": "A modern journal app with a focus on simplicity.",
+      "logo": "https://i.ibb.co/6XV3bP8/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/JRNqskX/3.png",
+        "https://i.ibb.co/PMy5sLD/1.png",
+        "https://i.ibb.co/PWq7VXC/2.png"
+      ],
+      "upvotes": 1,
+      "category": "Lifestyle"
+    },
+    {
+      "id": 2,
+      "name": "Robinhood",
+      "short": "Invest Save Earn",
+      "description": "With Robinhood Financial, you can invest in stocks, funds, and options. You can also buy and sell cryptocurrencies like Bitcoin (BTC), Ethereum (ETH), and Dogecoin (DOGE) with Robinhood Crypto.\n\nNew to investing? We have the tools and services to empower investors like you to participate in the financial market. Learn how to invest and trade smartly and get in-depth financial info - in lingo that makes sense.",
+      "logo": "https://i.ibb.co/dktpDmb/robinhood.png",
+      "screenshots": [
+        "https://i.ibb.co/12BsyV1/1.png",
+        "https://i.ibb.co/BnF22vn/2.png",
+        "https://i.ibb.co/44tZ9Tv/3.png"
+      ],
+      "upvotes": 3,
+      "category": "Finance"
+    },
+    {
+      "id": 3,
+      "name": "Houseparty",
+      "short": "Group Video Chat",
+      "description": "Houseparty is the face-to-face social network where you can connect with the people you care about most. The app makes connecting face to face effortless, alerting you when your friends are in the house and ready to chat so you can jump right into the conversation.",
+      "logo": "https://i.ibb.co/N2rz4dP/houseparty.png",
+      "screenshots": [
+        "https://i.ibb.co/j4rJDgb/1.png",
+        "https://i.ibb.co/2kFyDfM/2.png",
+        "https://i.ibb.co/WFB2QgK/3.png"
+      ],
+      "upvotes": 1,
+      "category": "Social Networking"
+    },
+    {
+      "id": 4,
+      "name": "Spotify",
+      "short": "Discover the latest songs",
+      "description": "Spotify is the best way to listen to music and podcasts on mobile or tablet.\n\nSearch for any track, artist or album and listen for free. Make and share playlists. Build your biggest, best ever music collection.",
+      "logo": "https://i.ibb.co/SmgTFfP/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/dbGqxBv/2.png",
+        "https://i.ibb.co/FYgqn0d/3.png",
+        "https://i.ibb.co/drdcWf1/4.png"
+      ],
+      "upvotes": 4,
+      "category": "Music"
+    },
+    {
+      "id": 5,
+      "name": "Coinbase Pro",
+      "short": "Trade crypto, BTC, ETH, EOS",
+      "description": "Coinbase: the simple, safe way to buy, manage and sell your cryptocurrency.\n\nWe’re the world’s largest cryptocurrency exchange, with over 25 million users across 32 countries worldwide. Coinbase allows you to securely buy, store and sell cryptocurrencies like Bitcoin, Bitcoin Cash, Ethereum, Ethereum Classic, Litecoin, and many more on our easy, user-friendly app and web platform.",
+      "logo": "https://i.ibb.co/wMZ1QgH/coinbase.png",
+      "screenshots": [
+        "https://i.ibb.co/C99brRb/1.png",
+        "https://i.ibb.co/gdP0jbK/2.png",
+        "https://i.ibb.co/fv636dg/3.png",
+        "https://i.ibb.co/FBj9NLh/4.png"
+      ],
+      "upvotes": 3,
+      "category": "Finance"
+    },
+    {
+      "id": 6,
+      "name": "Behance",
+      "short": "Creative Portfolios",
+      "description": "Use Behance for iOS to explore work by the world’s top creative talent wherever you are.",
+      "logo": "https://i.ibb.co/dQ6z0vP/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/kSCrXPw/1.png",
+        "https://i.ibb.co/C5w97dC/2.png",
+        "https://i.ibb.co/CKnVRdj/3.png",
+        "https://i.ibb.co/jTx4Ln7/4.png"
+      ],
+      "upvotes": 79,
+      "category": "Graphics & Design"
+    },
+    {
+      "id": 7,
+      "name": "Adobe Illustrator",
+      "short": "Creative Vector Art",
+      "description": "If you’re a vector artist, Adobe Draw is your go-to app for digital drawing.\n\nUse customizable brushes to draw, design, and style your art. We’ve included basic shape stencils to speed up your design work— like circles, squares, French curves, polygons, and even speech bubbles for comics. Create on resizable canvases up to a delightfully printable 8k.",
+      "logo": "https://i.ibb.co/2KHkX3N/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/qYhPMtX/1.png",
+        "https://i.ibb.co/8YJfgsK/2.png",
+        "https://i.ibb.co/fkHtcy5/3.png",
+        "https://i.ibb.co/VvBZgjM/4.png",
+        "https://i.ibb.co/vznK4qs/5.png"
+      ],
+      "upvotes": 123,
+      "category": "Graphics & Design"
+    },
+    {
+      "id": 8,
+      "name": "Dropbox",
+      "short": "Docs and Photos Cloud Storage",
+      "description": "Dropbox lets anyone upload and transfer files to the cloud, and share them with anyone.\n\nBack up and sync docs, photos, videos, and other files to cloud storage and access them from any device, no matter where you are. And with advanced sharing features, it’s easy to share docs and send files—large or small—to family, friends, and co-workers.",
+      "logo": "https://i.ibb.co/q9vQxtX/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/RYkkBBZ/1.png",
+        "https://i.ibb.co/M1dmh4G/2.png",
+        "https://i.ibb.co/1G3LXfY/3.png",
+        "https://i.ibb.co/80QJM6Q/4.png"
+      ],
+      "upvotes": 90,
+      "category": "Productivity"
+    },
+    {
+      "id": 9,
+      "name": "ZOOM",
+      "short": "Cloud Meetings",
+      "description": "Zoom is #1 in customer satisfaction and the best unified communication experience on mobile.\n\nIt's super easy! Install the free Zoom app, click on New Meeting, and invite up to 100 people to join you on video! Connect with anyone on iPad, iPhone, other mobile devices, Windows, Mac, Zoom Rooms, H.323/SIP room systems, and telephones.",
+      "logo": "https://i.ibb.co/KK59tbQ/logo.png",
+      "screenshots": [
+        "https://i.ibb.co/1XXqsc2/1.png",
+        "https://i.ibb.co/D8KXj9X/2.png",
+        "https://i.ibb.co/nzXHd54/3.png",
+        "https://i.ibb.co/PFswKYM/4.png"
+      ],
+      "upvotes": 42,
+      "category": "Business"
+    },
+    {
+      "id": 10,
+      "name": "Google Chrome",
+      "short": "Fast & Secure Web Browser",
+      "description": "Get more done with the new Google Chrome on iPhone and iPad. Now more simple, secure and faster-than-ever, with Google Smarts built-in.",
+      "logo": "https://i.ibb.co/5KhLjNx/246x0w.png",
+      "screenshots": [
+        "https://i.ibb.co/vwyB4LF/300x0w.png",
+        "https://i.ibb.co/Z1NR3Q3/300x0w.png",
+        "https://i.ibb.co/vvY0Mp4/300x0w.png"
+      ],
+      "upvotes": 56,
+      "category": "Utilities"
+    }
+  ],
+  "categories": [
+    "Books",
+    "Business",
+    "Developer Tools",
+    "Education",
+    "Entertainment",
+    "Finance",
+    "Food & Drink",
+    "Games",
+    "Graphics & Design",
+    "Health & Fitness",
+    "Lifestyle",
+    "Magazines & Newspapers",
+    "Medical",
+    "Music",
+    "Navigation",
+    "News",
+    "Photo & Video",
+    "Productivity",
+    "Shopping",
+    "Social Networking",
+    "Sports",
+    "Travel",
+    "Utilities",
+    "Weather"
+  ]
+}

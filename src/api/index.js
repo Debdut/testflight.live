@@ -1,0 +1,17 @@
+
+import Url from 'url-request'
+
+const Base = Url('http://localhost:1729')
+
+const Apps = () => Base
+  .fork()
+  .go('apps')
+
+const Categories = () => Base
+  .fork()
+  .go('categories')
+
+const App = (id) => Apps()
+  .go(id)
+
+export default { Apps, Categories, App, Base }
