@@ -17,11 +17,9 @@ export default class App extends Component {
 		return (
 			<div id='app'>
 				<Header />
-				<div class='container pt-8'>
+				<div class='container pt-4'>
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
-						{/* <Profile path="/profile/" user="me" /> */}
-						{/* <Profile path="/profile/:user" /> */}
 					</Router>
 				</div>
 			</div>
