@@ -30,12 +30,12 @@ class Header extends Component {
     this.setState({ active: !this.state.active })
   }
 
-  render ({ }, { active, categories }) {
+  render ({}, { active, categories }) {
     return (
       <nav class='overflow-hidden bg-white m-0 mx-auto'>
         <div class='container flex justify-between'>
           <Logo />
-          { active ? <Search categories={categories} /> : null }
+          { active ? <Search categories={categories} toggle={this.toggle} /> : null }
           <ToggleSearch active={active} toggle={this.toggle} />
         </div>
       </nav>
@@ -49,8 +49,8 @@ const Logo = () => (
   </Link>
 )
 
-const Search = ({ categories }) => (
-  <div class='py-4 md:px-20 w-full'>
+const Search = ({ categories, toggle }) => (
+  <div class='py-4 md:px-20 w-full' onClick={toggle}>
     <div class='flex bg-gray-200 rounded-lg pl-4'>
       <span>
         <Icon icon='Search' fill='#9aa' class='inline' />
