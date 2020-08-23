@@ -6,9 +6,10 @@ import Header from './header'
 // Code-splitting is automated for routes
 import Home from '@/routes/home'
 import Category from '@/routes/category'
+import App from '@/routes/app'
 // import Profile from '../routes/profile'
 
-export default class App extends Component {
+export default class Application extends Component {
 	
 	handleRoute = e => {
 		this.currentUrl = e.url
@@ -22,6 +23,7 @@ export default class App extends Component {
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
 						<Category path="category/:category" />
+						<App path="app/:id" />
 					</Router>
 				</div>
 			</div>

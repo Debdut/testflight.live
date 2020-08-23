@@ -11,7 +11,7 @@ const Categories = () => Base
   .fork()
   .go('categories')
 
-const App = (q) => Apps()
-  .query(q)
+const App = (id) => Apps()
+  .go(id)
 
-export default { Apps, Categories, App, Base }
+export default { Apps, App, Categories, Base }
