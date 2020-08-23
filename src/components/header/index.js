@@ -1,5 +1,4 @@
 import { Component } from 'preact'
-import { Link } from 'preact-router/match'
 
 import Icon from '@/components/icon'
 import CategoryList from '@/components/category-list'
@@ -44,9 +43,9 @@ class Header extends Component {
 }
 
 const Logo = () => (
-  <Link to='/' class='py-4 pr-2'>
+  <a href='/' class='py-4 pr-2'>
     <Icon icon='BaseLogo' width='44px' height='44px' fill='#0366d6' />
-  </Link>
+  </a>
 )
 
 const Search = ({ categories, toggle }) => (
