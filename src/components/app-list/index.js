@@ -7,17 +7,17 @@ const AppList = ({ apps, title }) => (
   </>
 )
 
-const App = ({ app: { name, logo, short, category, id, upvotes } }) => (
+const App = ({ app: { name, icons, short, categories, id, upvotes } }) => (
 	<li class='border-b flex p-4 px-2'>
-		<img class='h-16 rounded-lg' src={logo} alt='app logo' />
+		<img class='h-16 rounded-lg' src={icons[0].url} alt='app logo' />
 		<div class='pl-6 w-full'>
 			<div class='float-right mt-4'>
-				<i class='far fa-star text-2xl text-gray-700'></i>
+				<i class='far fa-star text-2xl text-gray-700' />
 				<p class='ml-1'>{upvotes}</p>
 			</div>
 			<a class='font-semibold text-lg' href={`/app/${id}`}>{name}</a>
 			<p>{short}</p>
-			<span class='bg-teal-200 text-teal-800 font-bold px-1 rounded'>{category}</span>
+			<span class='bg-teal-200 text-teal-800 font-bold px-1 rounded'>{categories}</span>
 		</div>
 	</li>
 )

@@ -17,4 +17,4 @@ const Category = (q) => Categories()
 const App = (q) => Apps()
   .query(q)
 
-export default { Apps, Categories, App, Base }
+export default { Apps, Categories, App, Base, Category }

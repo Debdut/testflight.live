@@ -3,7 +3,7 @@ import { Component } from 'preact'
 import AppList from '@/components/app-list'
 import Api from '@/api'
 
-import style from './style'
+// import style from './style.css'
 
 class Home extends Component {
 	state = {
@@ -17,12 +17,14 @@ class Home extends Component {
 
 	fetchApps = async () => {
 		const trending = await (Api.Apps()
+		.query({ _embed: 'icons' })
 		.query({ _page: 2, _limit: 5 })
 		.get())
 
 		this.setState({ trending })
 
 		const latest = await (Api.Apps()
+		.query({ _embed: 'icons' })
 		.query({ _page: 1, _limit: 5 })
 		.get())
 

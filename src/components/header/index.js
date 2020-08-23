@@ -30,8 +30,7 @@ class Header extends Component {
     this.setState({ active: !this.state.active })
   }
 
-  render ({ categories }, { active }) {
-    
+  render ({ }, { active, categories }) {
     return (
       <nav class='overflow-hidden bg-white m-0 mx-auto'>
         <div class='container flex justify-between'>
@@ -46,7 +45,7 @@ class Header extends Component {
 
 const Logo = () => (
   <Link to='/' class='py-4 pr-2'>
-    <Icon icon='BaseLogo' width='44px' height='44px' fill='#0366d6'/>
+    <Icon icon='BaseLogo' width='44px' height='44px' fill='#0366d6' />
   </Link>
 )
 
@@ -62,11 +61,11 @@ const Search = ({ categories }) => (
   </div>
 )
 
-const ToggleSearch = ({ active, toggle }) => {
+const ToggleSearch = ({ active, toggle }) => (
   <div class='pt-8 cursor-pointer' onClick={toggle}>
-    <div class={`${style.bar} ${active ? style.barActive : ''}`}></div>
-    <div class={`${style.bar} ${active ? style.barActive : ''}`}></div>
+    <div class={`${style.bar} ${active ? style.barActive : ''}`} />
+    <div class={`${style.bar} ${active ? style.barActive : ''}`} />
   </div>
-}
+)
 
 export default Header
