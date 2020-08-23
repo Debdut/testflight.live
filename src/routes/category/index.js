@@ -8,11 +8,26 @@ class Category extends Component {
     apps: []
   }
 
-  componentDidMount() {
-    this.fetchApps()
-  }
+  componentDidMount () {
+		this.fetchApps()
+	}
 
-  fetchApps() {
+	fetchApps = async () => {
+		const apps = await (Api.Apps()
+		.query({ _embed: 'icons' })
+    .query({ categories_like: this.props.category })
+		.get())
 
-  }
+		this.setState({ apps })
+	}
+
+	render ({ category }, { apps }) {
+		return (
+			<>
+				<AppList apps={apps} title={category} />
+			</>
+		)
+	}
 }
+
+export default Category
