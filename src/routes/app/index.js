@@ -12,8 +12,8 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {
-		this.fetchApp()
+  async componentWillMount () {
+		await this.fetchApp()
 	}
 
 	fetchApp = async () => {
@@ -39,7 +39,7 @@ const Header = ({ app }) => (
     <img src={app.icons[0].url} alt='Logo' class={style.logo} />
     <div class='ml-6'>
       <h3>{app.name}</h3>
-      <h4 class='text-gray-700'>{app.categories}</h4>
+      <h4 class='text-gray-light-6 mb-10'>{app.categories}</h4>
       <Status app={app} />
     </div>
   </header>
@@ -49,10 +49,7 @@ const Status = ({ app }) => {
   switch (app.status) {
     case 'Public':
       return (
-        <div>
-          <a class='btn' href={app.testflight_url}>GET</a>
-          <button class='btn'>SCAN</button>             
-        </div>
+        <a class='btn' href={app.testflight_url}>GET</a>
       )
     default:
       return (
@@ -61,20 +58,30 @@ const Status = ({ app }) => {
   }
 }
 
+const CHAR_LIMIT = 290
+
 class Description extends Component {
   state = {
     expand: false
   }
 
-  render({ text }) {
+  toggle = () => {
+    this.setState({ expand: !this.state.expand })
+  }
+
+  render({ text = '' }, { expand }) {
+    const isButton = !expand && text.length > CHAR_LIMIT
     return (
-      <p class='mt-10 text-lg font-light'>{text}</p>
+      <div class='mt-10 font-light text-sm'>
+        <p class='text-sm'>{expand ? text : text.slice(0, CHAR_LIMIT)}</p>
+        {isButton ? <button onClick={this.toggle} class='float-right text-blue-dark' style={{ marginTop: -20, marginRight: 20}}>more</button> : null}
+      </div>
     )
   }
 }
 
 const Screenshots = ({ screenshots }) => (
-  <div class='flex overflow-x-scroll mt-8'>
+  <div class='flex overflow-x-scroll my-10 pb-6'>
     {screenshots.map((screenshot, index) => <img src={screenshot.url} alt='Screenshot' key={index} class={style.screenshot} />)}
   </div>
 )

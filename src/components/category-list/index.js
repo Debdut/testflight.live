@@ -5,7 +5,7 @@ const CategoryList = ({ categories }) => (
 )
 
 const Category = ({ category }) => (
-  <li class='border-b p-2 pl-4'>
+  <li class='list p-2 pl-4'>
     <a href={`/category/${category.name}`}>{category.name}</a>
   </li>
 )

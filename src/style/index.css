@@ -3,7 +3,7 @@
 
 html,
 body {
-  @apply w-full h-full p-0 m-0 font-normal antialiased bg-gray-100;
+  @apply w-full h-full p-0 m-0 font-normal antialiased;
 }
 
 * {
@@ -40,10 +40,53 @@ p, span {
 }
 
 a {
-  @apply text-sm font-bold;
-  color: #0366d6;
+  @apply text-sm font-bold text-blue-light;
 }
 
 a:hover {
-  text-decoration: underline;
+  @apply underline;
+}
+
+.btn {
+  @apply  p-2 px-6 rounded-full;
+}
+
+.btn:hover {
+  @apply no-underline;
+}
+
+.input-container {
+  @apply flex rounded-lg pl-4;
+}
+
+.input {
+  @apply p-2 px-4 w-full rounded-lg outline-none;
+}
+
+.primary {
+  @apply bg-gray-light-1 text-gray-dark-2;
+}
+
+.primary > .input {
+  @apply bg-transparent text-gray-light-5;
+}
+
+.primary > .input::placeholder {
+  @apply text-gray-light-5;
+}
+
+.primary > .input-icon {
+  @apply text-gray-light-5 fill-current;
+}
+
+.primary .btn {
+  @apply text-white bg-blue-dark;
+}
+
+.highlight {
+  @apply bg-white text-gray-dark-6;
+}
+
+.highlight .list {
+  @apply border-b border-gray-light-2;
 }

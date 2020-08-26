@@ -31,7 +31,7 @@ class Header extends Component {
 
   render ({}, { active, categories }) {
     return (
-      <nav class='overflow-hidden bg-white m-0 mx-auto'>
+      <nav class='highlight overflow-hidden m-0 mx-auto'>
         <div class='container flex justify-between'>
           <Logo />
           { active ? <Search categories={categories} toggle={this.toggle} /> : null }
@@ -48,17 +48,21 @@ const Logo = () => (
   </a>
 )
 
-const Search = ({ categories, toggle }) => (
-  <div class='py-4 md:px-20 w-full' onClick={toggle}>
-    <div class='flex bg-gray-200 rounded-lg pl-4'>
-      <span>
-        <Icon icon='Search' fill='#9aa' class='inline' />
-      </span>
-      <input type='text' placeholder='Search Apps' class='p-2 px-4 w-full bg-gray-200 rounded-lg outline-none' />
+const Search = ({ categories, toggle }) => {
+  const stopHandler = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+  return (
+    <div class='py-4 md:px-20 w-full' onClick={toggle}>
+      <div class='input-container primary'  onClick={stopHandler}>
+        <Icon icon='Search' class='input-icon' />
+        <input type='text' placeholder='Search Apps' class='input' />
+      </div>
+      <CategoryList categories={categories} />
     </div>
-    <CategoryList categories={categories} />
-  </div>
-)
+  )
+}
 
 const ToggleSearch = ({ active, toggle }) => (
   <div class='pt-8 cursor-pointer' onClick={toggle}>
