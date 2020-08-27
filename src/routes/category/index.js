@@ -23,9 +23,9 @@ class Category extends Component {
 
 	render ({ category }, { apps }) {
 		return (
-			<>
+			<div class='container'>
 				<AppList apps={apps} title={category} />
-			</>
+			</div>
 		)
 	}
 }

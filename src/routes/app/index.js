@@ -26,20 +26,25 @@ class App extends Component {
 	render ({ }, { app }) {
 		return (
 			<>
-				<Header app={app} />
-        <Description text={app.description} />
+        <div class='container'>
+          <Header app={app} />
+          <Description text={app.description} />
+        </div>
         <Screenshots screenshots={app.screenshots} />
+        <div class='container'>
+          <Links app={app} />
+        </div>
 			</>
 		)
 	}
 }
 
 const Header = ({ app }) => (
-  <header class='flex mt-4'>
-    <img src={app.icons[0].url} alt='Logo' class={style.logo} />
+  <header class='flex md:mt-4'>
+    <img src={app.icons[0].url} alt='Logo' class={`${style.logo} box-shadow`} />
     <div class='ml-6'>
       <h3>{app.name}</h3>
-      <h4 class='text-gray-light-6 mb-10'>{app.categories}</h4>
+      <h4 class='text-gray-light-6 mb-4 md:mb-24'>{app.categories}</h4>
       <Status app={app} />
     </div>
   </header>
@@ -81,9 +86,30 @@ class Description extends Component {
 }
 
 const Screenshots = ({ screenshots }) => (
-  <div class='flex overflow-x-scroll my-10 pb-6'>
-    {screenshots.map((screenshot, index) => <img src={screenshot.url} alt='Screenshot' key={index} class={style.screenshot} />)}
-  </div>
+    <div class={`${style.scOut} overflow-y-hidden my-6`}>
+      <div class={`${style.scIn} flex overflow-x-scroll pb-10 px-4`}>
+        {screenshots.map((screenshot, index) => <img src={screenshot.url} alt='Screenshot' key={index} class={`${style.screenshot} box-shadow mr-6`} />)}
+      </div>
+    </div>
 )
+
+const Links = ({ app: { website, twitter, email } }) => {
+  const links = []
+  if (website) {
+    links.push({ title: 'Website', link: website })
+  }
+  if (twitter) {
+    links.push({ title: 'Twitter', link: twitter })
+  }
+  if (email) {
+    links.push({ title: 'Email', link: `mailto:${email}` })
+  }
+
+  return (
+    <ul>
+      {links.map(({ link, title }, index) => <li class='list'><a href={link}key={index}>{title}</a></li>)}
+    </ul>
+  )
+}
 
 export default App

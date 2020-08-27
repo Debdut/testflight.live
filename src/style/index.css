@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  @apply w-full px-4 m-auto;
+  @apply w-full p-4 m-auto;
 }
 
 @media (min-width: 768px) {
@@ -75,7 +75,7 @@ a:hover {
   @apply text-gray-light-5;
 }
 
-.primary > .input-icon {
+.primary .input-icon {
   @apply text-gray-light-5 fill-current;
 }
 
@@ -89,4 +89,18 @@ a:hover {
 
 .highlight .list {
   @apply border-b border-gray-light-2;
+}
+
+.highlight .list:last-child {
+  @apply border-none;
+}
+
+.opaque {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  @apply bg-opacity-75;
+}
+
+.box-shadow {
+  box-shadow: 0 1px 10px 0 rgba(150, 150, 150, 0.07), 0 1px 5px 0 rgba(150, 150, 150, 0.06);
 }

@@ -31,7 +31,7 @@ class Header extends Component {
 
   render ({}, { active, categories }) {
     return (
-      <nav class='highlight overflow-hidden m-0 mx-auto'>
+      <nav class='highlight opaque fixed w-full box-shadow overflow-y-scroll'>
         <div class='container flex justify-between'>
           <Logo />
           { active ? <Search categories={categories} toggle={this.toggle} /> : null }
@@ -43,8 +43,8 @@ class Header extends Component {
 }
 
 const Logo = () => (
-  <a href='/' class='py-4 pr-2'>
-    <Icon icon='BaseLogo' width='44px' height='44px' fill='#0366d6' />
+  <a href='/' class='pr-2'>
+    <Icon icon='BaseLogo' width='44px' height='44px' />
   </a>
 )
 
@@ -54,10 +54,10 @@ const Search = ({ categories, toggle }) => {
     e.stopPropagation()
   }
   return (
-    <div class='py-4 md:px-20 w-full' onClick={toggle}>
-      <div class='input-container primary'  onClick={stopHandler}>
+    <div class='pb-4 md:px-20 w-full' onClick={toggle}>
+      <div class='input-container opaque box-shadow' onClick={stopHandler}>
         <Icon icon='Search' class='input-icon' />
-        <input type='text' placeholder='Search Apps' class='input' />
+        <input type='text' placeholder='Search Apps' class='input bg-transparent' />
       </div>
       <CategoryList categories={categories} />
     </div>
@@ -65,7 +65,7 @@ const Search = ({ categories, toggle }) => {
 }
 
 const ToggleSearch = ({ active, toggle }) => (
-  <div class='pt-8 cursor-pointer' onClick={toggle}>
+  <div class='pt-4 cursor-pointer' onClick={toggle}>
     <div class={`${style.bar} ${active ? style.barActive : ''}`} />
     <div class={`${style.bar} ${active ? style.barActive : ''}`} />
   </div>

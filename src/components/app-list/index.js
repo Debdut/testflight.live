@@ -1,13 +1,13 @@
 const AppList = ({ apps, title }) => (
   <>
     <h2 class='my-6'>{title}</h2>
-    <ul class='highlight px-4 rounded-lg'>
+    <ul class='highlight box-shadow px-4 rounded-lg'>
       {apps.map((app, index) => <App app={app} key={index} />)}
     </ul>
   </>
 )
 
-const App = ({ app: { name, icons, short, categories, id, upvotes } }) => (
+const App = ({ app: { name, icons, short, categories, id } }) => (
 	<li class='list flex p-4 px-2'>
 		<img class='h-16 rounded-lg' src={icons[0].url} alt='app logo' />
 		<div class='pl-6 w-full'>

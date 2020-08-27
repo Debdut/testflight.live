@@ -18,14 +18,14 @@ export default class Application extends Component {
 	render() {
 		return (
 			<div id='app'>
-				<Header />
-				<div class='container pt-4'>
-					<Router onChange={this.handleRoute}>
-						<Home path="/" />
-						<Category path="category/:category" />
-						<App path="app/:id" />
-					</Router>
-				</div>
+			<Header />
+			<div class='pt-20 pb-10'>
+				<Router onChange={this.handleRoute}>
+					<Home path="/" />
+					<Category path="category/:category" />
+					<App path="app/:id" />
+				</Router>
+			</div>
 			</div>
 		)
 	}

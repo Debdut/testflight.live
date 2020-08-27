@@ -33,12 +33,27 @@ class Home extends Component {
 
 	render ({}, { latest, trending }) {
 		return (
-			<>
+			<div class='container'>
 				<AppList apps={trending} title='Trending' />
 				<AppList apps={latest} title='New' />
-			</>
+				<Links />
+			</div>
 		)
 	}
+}
+
+const Links = () => {
+  const links = [
+		{ title: 'Submit App', link: 'https://shashwat988522.typeform.com/to/vUK59PFC' },
+		{ title: 'Twitter', link: 'https://twitter.com/testflight_live' },
+		{ title: 'Email', link: 'mailto:iawaiponly@gmail.com'}
+	]
+
+  return (
+    <ul class='mt-10'>
+      {links.map(({ link, title }, index) => <li class='list'><a href={link}key={index}>{title}</a></li>)}
+    </ul>
+  )
 }
 
 export default Home

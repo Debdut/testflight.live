@@ -1,9 +1,7 @@
 module.exports = {
   theme: {
-    extend: {
-      screens: {
-        dark: { raw: '(prefers-colors-scheme: dark)' }
-      }
+    screens: {
+      md: '768px'
     },
     colors: {
       transparent: 'transparent',
@@ -61,6 +59,9 @@ module.exports = {
         light: 'rgb(255,214,10)',
         dark: 'rgb(255,204,0)'
       }
+    },
+    maxWidth: {
+      screen: '100vw'
     }
   }
 }
