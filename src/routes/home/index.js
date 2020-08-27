@@ -36,7 +36,9 @@ class Home extends Component {
 			<div class='container'>
 				<AppList apps={trending} title='Trending' />
 				<AppList apps={latest} title='New' />
-				<Links />
+				<footer class='mt-10'>
+					<Links />
+				</footer>
 			</div>
 		)
 	}
@@ -50,7 +52,7 @@ const Links = () => {
 	]
 
   return (
-    <ul class='mt-10'>
+    <ul>
       {links.map(({ link, title }, index) => <li class='list'><a href={link}key={index}>{title}</a></li>)}
     </ul>
   )

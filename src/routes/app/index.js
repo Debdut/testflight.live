@@ -31,9 +31,9 @@ class App extends Component {
           <Description text={app.description} />
         </div>
         <Screenshots screenshots={app.screenshots} />
-        <div class='container'>
+        <footer class='container'>
           <Links app={app} />
-        </div>
+        </footer>
 			</>
 		)
 	}
