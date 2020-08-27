@@ -54,12 +54,16 @@ const Search = ({ categories, toggle }) => {
     e.stopPropagation()
   }
   return (
-    <div class='pb-4 md:px-20 w-full' onClick={toggle}>
+    <div class='md:px-20 w-full' onClick={toggle}>
       <div class='input-container opaque box-shadow' onClick={stopHandler}>
         <Icon icon='Search' class='input-icon' />
         <input type='text' placeholder='Search Apps' class='input bg-transparent' />
       </div>
-      <CategoryList categories={categories} />
+      <div class='overflow-x-hidden'>
+        <div class='overflow-y-scroll' style={{ height: 'calc(100vh - 60px)', marginRight: -20 }}>
+          <CategoryList categories={categories} />
+        </div>
+      </div>
     </div>
   )
 }
