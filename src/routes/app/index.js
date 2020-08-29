@@ -1,6 +1,8 @@
 import { Component } from 'preact'
-
+import { QRCodeSVG } from '@cheprasov/qrcode'
 import Url from 'url-request'
+
+import { SVGComponent } from '@/components/util'
 
 import style from './style.css'
 
@@ -39,23 +41,45 @@ class App extends Component {
 	}
 }
 
-const Header = ({ app }) => (
-  <header class='flex md:mt-4'>
-    <img src={app.icons[0].url} alt='Logo' class={`${style.logo} box-shadow`} />
-    <div class='ml-6'>
-      <h3>{app.name}</h3>
-      <h4 class='text-gray-light-6 mb-4 md:mb-24'>{app.categories}</h4>
-      <Status app={app} />
-    </div>
-  </header>
-)
+class Header extends Component {
+  state = {
+    get: false
+  }
 
-const Status = ({ app }) => {
+  install = () => {
+    this.setState({ get: true })
+  }
+
+  render ({ app }, { get }) {
+    return (
+      <header class='flex md:mt-4'>
+        <Logo app={app} get={get} />
+        <div class='ml-6'>
+          <h3>{app.name}</h3>
+          <h4 class='text-gray-light-6 mb-2 md:mb-24'>{app.categories}</h4>
+          <Status app={app} get={get} install={this.install} />
+        </div>
+      </header>
+    )
+  } 
+}
+  
+const Logo = ({ app: { icons, testflight_url }, get }) => {
+  const isMobile = window.screen.width <= 1000
+  console.log(isMobile)
+  if (get && !isMobile) {
+    return <QrCode link={testflight_url} class={`${style.qr} box-shadow`} />
+  }
+  return <img src={icons[0].url} alt='Logo' class={`${style.logo} box-shadow`} />
+}
+
+const Status = ({ app, get, install }) => {
   switch (app.status) {
     case 'Public':
-      return (
-        <a class='btn' href={app.testflight_url}>GET</a>
-      )
+      if (get) {
+        return <a class='btn bg-green-dark' href={app.testflight_url}>INSTALL</a>
+      }
+      return <button class='btn' onClick={install}>GET</button>
     default:
       return (
         <span>{app.status}</span>
@@ -110,6 +134,14 @@ const Links = ({ app: { website, twitter, email } }) => {
       {links.map(({ link, title }, index) => <li class='list'><a href={link}key={index}>{title}</a></li>)}
     </ul>
   )
+}
+
+const QrCode = ({ link, ...props }) => {
+  const qrSVG = new QRCodeSVG(link)
+  const svg = qrSVG.toString()
+  const SVG = SVGComponent(svg)
+
+  return <SVG {...props} />
 }
 
 export default App

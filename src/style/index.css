@@ -47,6 +47,11 @@ a:hover {
   @apply underline;
 }
 
+button {
+  line-height: 1;
+  @apply font-bold;
+}
+
 .btn {
   @apply  p-2 px-6 rounded-full;
 }
