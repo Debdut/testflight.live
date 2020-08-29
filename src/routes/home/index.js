@@ -16,16 +16,20 @@ class Home extends Component {
 	}
 
 	fetchApps = async () => {
+		const time = Date.now()
+		const page_trending = Math.floor(time / (1000 * 60 * 60)) % 53
+		const page_new = time % 25
+
 		const trending = await (Api.Apps()
 		.query({ _embed: 'icons' })
-		.query({ _page: 2, _limit: 5 })
+		.query({ _page: page_trending, _limit: 5 })
 		.get())
 
 		this.setState({ trending })
 
 		const latest = await (Api.Apps()
 		.query({ _embed: 'icons' })
-		.query({ _page: 1, _limit: 5 })
+		.query({ _page: page_new, _limit: 10 })
 		.get())
 
 		this.setState({ latest })

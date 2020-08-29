@@ -66,7 +66,6 @@ class Header extends Component {
   
 const Logo = ({ app: { icons, testflight_url }, get }) => {
   const isMobile = window.screen.width <= 1000
-  console.log(isMobile)
   if (get && !isMobile) {
     return <QrCode link={testflight_url} class={`${style.qr} box-shadow`} />
   }
