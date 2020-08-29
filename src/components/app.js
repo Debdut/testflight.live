@@ -20,7 +20,7 @@ export default class Application extends Component {
 		return (
 			<div id='app'>
 			<Header />
-			<div class='pt-20 pb-10'>
+			<div class='pt-20 pb-10 primary'>
 				<Router onChange={this.handleRoute}>
 					<Home path='/' />
 					<Category path='category/:category' />
