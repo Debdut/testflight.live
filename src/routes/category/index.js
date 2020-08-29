@@ -21,6 +21,10 @@ class Category extends Component {
 		this.setState({ apps })
 	}
 
+	shouldComponentUpdate() {
+		this.fetchApps()
+  }
+
 	render ({ category }, { apps }) {
 		return (
 			<div class='container'>

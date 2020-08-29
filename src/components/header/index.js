@@ -1,4 +1,5 @@
 import { Component } from 'preact'
+import { route } from 'preact-router'
 
 import Icon from '@/components/icon'
 import CategoryList from '@/components/category-list'
@@ -49,15 +50,22 @@ const Logo = () => (
 )
 
 const Search = ({ categories, toggle }) => {
+
   const stopHandler = (e) => {
     e.preventDefault()
     e.stopPropagation()
   }
+
+  const change = (event) => {
+    route(`/search/${event.target.value}`)
+    this.props.toggle()
+  }
+
   return (
     <div class='md:px-20 w-full' onClick={toggle}>
       <div class='input-container opaque box-shadow' onClick={stopHandler}>
         <Icon icon='Search' class='input-icon' />
-        <input type='text' placeholder='Search Apps' class='input bg-transparent' />
+        <input type='text' placeholder='Search Apps' class='input bg-transparent' onChange={change}  />
       </div>
       <div class='overflow-x-hidden'>
         <div class='overflow-y-scroll' style={{ height: 'calc(100vh - 60px)', marginRight: -20 }}>
