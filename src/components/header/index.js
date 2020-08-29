@@ -1,9 +1,10 @@
 import { Component } from 'preact'
 import { route } from 'preact-router'
 
-import Icon from '@/components/icon'
 import CategoryList from '@/components/category-list'
 import Api from '@/api'
+
+import LogoSVG from '@/assets/icons/base-logo.svg'
 
 import style from './style.css'
 
@@ -45,7 +46,7 @@ class Header extends Component {
 
 const Logo = () => (
   <a href='/' class='pr-2'>
-    <Icon icon='BaseLogo' width='44px' height='44px' />
+    <img src={LogoSVG} alt='Logo' style={{ width: 44, height: 44 }} />
   </a>
 )
 
@@ -64,7 +65,7 @@ const Search = ({ categories, toggle }) => {
   return (
     <div class='md:px-20 w-full' onClick={toggle}>
       <div class='input-container opaque box-shadow' onClick={stopHandler}>
-        <Icon icon='Search' class='input-icon' />
+        {/* <Icon icon='Search' class='input-icon' /> */}
         <input type='text' placeholder='Search Apps' class='input bg-transparent' onChange={change}  />
       </div>
       <div class='overflow-x-hidden'>

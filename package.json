@@ -5,8 +5,6 @@
   "license": "MIT",
   "scripts": {
     "build": "preact build",
-    "serve:api": "concurrently \"npm run mock\" \"sirv build --cors --single\"",
-    "dev:api": "concurrently \"npm run mock\" \"preact watch\"",
     "serve": "sirv build --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
