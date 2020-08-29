@@ -1,7 +1,7 @@
 
 import Url from 'url-request'
 
-const Base = Url('http://testflight.live:1729')
+const Base = Url('https://api.testflight.live')
 
 const Apps = () => Base
   .fork()
