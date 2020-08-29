@@ -48,7 +48,7 @@ const Links = () => {
   const links = [
 		{ title: 'Submit App', link: 'https://shashwat988522.typeform.com/to/vUK59PFC' },
 		{ title: 'Twitter', link: 'https://twitter.com/testflight_live' },
-		{ title: 'Email', link: 'mailto:iawaiponly@gmail.com'}
+		{ title: 'Email', link: 'mailto:testflightlive@gmail.com'}
 	]
 
   return (

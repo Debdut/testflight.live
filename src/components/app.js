@@ -7,6 +7,7 @@ import Header from './header'
 import Home from '@/routes/home'
 import Category from '@/routes/category'
 import App from '@/routes/app'
+import Search from '@/routes/search'
 // import Profile from '../routes/profile'
 
 export default class Application extends Component {
@@ -21,9 +22,10 @@ export default class Application extends Component {
 			<Header />
 			<div class='pt-20 pb-10'>
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Category path="category/:category" />
-					<App path="app/:id" />
+					<Home path='/' />
+					<Category path='category/:category' />
+					<App path='app/:id' />
+					<Search path='search/:search' />
 				</Router>
 			</div>
 			</div>
