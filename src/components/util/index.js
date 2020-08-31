@@ -6,6 +6,8 @@ export function desvg (svg) {
   const content = svg.content
   const attributes = svg.attributes
 
+  delete attributes['xmlns:xlink']
+  
   return function (props) {
     return h(
       'svg',

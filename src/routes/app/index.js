@@ -66,11 +66,11 @@ class Header extends Component {
 }
   
 const Logo = ({ app: { icons, testflight_url }, get }) => {
-  const isMobile = window.screen.width <= 1000
+  const isMobile = window.screen.width <= 500
   if (get && !isMobile) {
     return <QrCode link={testflight_url} class={`${style.qr} box-shadow`} />
   }
-  return <img src={icons[0].url} alt='Logo' class={`${style.logo} box-shadow`} />
+  return <img src={icons[0].url} class={`${style.logo} box-shadow`} />
 }
 
 const Status = ({ app, get, install }) => {
@@ -112,7 +112,7 @@ class Description extends Component {
 const Screenshots = ({ screenshots }) => (
     <div class={`${style.scOut} overflow-y-hidden my-6`}>
       <div class={`${style.scIn} flex overflow-x-scroll pb-10 px-4`}>
-        {screenshots.map((screenshot, index) => <img src={screenshot.url} alt='Screenshot' key={index} class={`${style.screenshot} box-shadow mr-6`} />)}
+        {screenshots.map((screenshot, index) => <img src={screenshot.url} key={index} class={`${style.screenshot} box-shadow mr-6`} />)}
       </div>
     </div>
 )
