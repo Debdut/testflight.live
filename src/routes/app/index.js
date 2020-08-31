@@ -2,6 +2,7 @@ import { Component } from 'preact'
 import { QRCodeSVG } from '@cheprasov/qrcode'
 import Url from 'url-request'
 
+import Api from '@/api'
 import { SVGComponent } from '@/components/util'
 
 import style from './style.css'
@@ -19,7 +20,7 @@ class App extends Component {
 	}
 
 	fetchApp = async () => {
-		const app = await (Url(`http://localhost:1729/apps/${this.props.id}?_embed=screenshots&_embed=icons`)
+		const app = await (Url(`${Api.Base.url}/apps/${this.props.id}?_embed=screenshots&_embed=icons`)
 		.get())
 
 		this.setState({ app })

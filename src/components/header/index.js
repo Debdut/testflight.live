@@ -58,8 +58,8 @@ const Search = ({ categories, toggle }) => {
   }
 
   const change = (event) => {
+    toggle()
     route(`/search/${event.target.value}`)
-    this.props.toggle()
   }
 
   return (
