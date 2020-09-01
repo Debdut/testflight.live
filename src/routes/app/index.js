@@ -4,6 +4,7 @@ import Url from 'url-request'
 
 import Api from '@/api'
 import { SVGComponent } from '@/components/util'
+import HeadTag from '@/components/head'
 
 import style from './style.css'
 
@@ -30,6 +31,7 @@ class App extends Component {
 		return (
 			<>
         <div class='container'>
+          <Head  app={app} />
           <Header app={app} />
           <Description text={app.description} />
         </div>
@@ -40,6 +42,30 @@ class App extends Component {
 			</>
 		)
 	}
+}
+
+const Head = ({ app = {} }) => {
+  if (!app.id || Object.keys(app).length === 0 ) {
+    return
+  }
+
+  const description = (app.description || '').slice(0, 100)
+  const twitter = `@${(app.twitter || '/testflight_live').split('/').pop()}`
+
+  return (
+    <HeadTag
+      title={app.name}
+      description={description}
+      image={{
+        favicon: app.icons[0].url,
+        android: app.icons[0].url,
+        apple: app.icons[0].url
+      }}
+      url={`https://testflight.live/app/${app.id}`}
+      twitter={twitter}
+      manifest='/manifest.json'
+    />
+  )
 }
 
 class Header extends Component {

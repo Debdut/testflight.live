@@ -1,11 +1,11 @@
 {
-  "name": "Testflight Live",
-  "short_name": "Testflight Live",
+  "name": "Tesflight App Store - Discover Amazing Apps",
+  "short_name": "Testflight App Store",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#fff",
   "icons": [
     {
       "src": "/assets/logo/android-chrome-192x192.png",
@@ -16,6 +16,11 @@
       "src": "/assets/logo/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/assets/logo/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ]
 }
