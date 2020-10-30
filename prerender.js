@@ -4,9 +4,8 @@ async function render () {
   const AppData = await (Url(`https://api.testflight.live/apps/?_embed=screenshots&_embed=icons`)
     .get())
 
-  const categoryList = (await (Url('https://api.testflight.live/categories')
-    .get()))
-    .map(c => c.name)
+  const categoryList = await (Url('https://api.testflight.live/categories')
+    .get())
 
   const Apps = AppData
     .map(d => {
