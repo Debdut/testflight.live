@@ -5,6 +5,7 @@ import Url from 'url-request'
 import Api from '@/api'
 import { SVGComponent } from '@/components/util'
 import HeadTag from '@/components/head'
+import DevProfile from '@/components/dev-profile'
 
 import style from './style.css'
 
@@ -14,7 +15,7 @@ class App extends Component {
     this.state = {
       app: props.app || {
         icons: [{}],
-        screenshots: [{}]
+        screenshots: [{}],
       }
     }
   }
@@ -28,23 +29,31 @@ class App extends Component {
 	fetchApp = async () => {
 		const app = await (Url(`${Api.Base.url}/apps/${this.props.id}?_embed=screenshots&_embed=icons`)
 		.get())
+    
+    const devId = app.devId
+    if (devId) {
+      const dev = await (Url(`${Api.Base.url}/devs/${devId}?_embed=avatars`)
+		.get())
+      app.dev = dev
+    }
 
 		this.setState({ app })
 	}
 
 	render ({ }, { app }) {
 		return (
-			<>
-        <div class='container'>
+			<article >
+        <section class='container'>
           <Head  app={app} />
           <Header app={app} />
           <Description text={app.description} />
-        </div>
+        </section>
         <Screenshots screenshots={app.screenshots} />
-        <footer class='container'>
+        <section class='container space-y-10'>
           <Links app={app} />
-        </footer>
-			</>
+          <DevProfile dev={app.dev} />
+        </section>
+			</article>
 		)
 	}
 }
@@ -144,11 +153,11 @@ class Description extends Component {
 }
 
 const Screenshots = ({ screenshots }) => (
-    <div class={`${style.scOut} overflow-y-hidden my-6`}>
+    <section class={`${style.scOut} overflow-y-hidden my-6`}>
       <div class={`${style.scIn} flex overflow-x-scroll pb-10 px-4`}>
         {screenshots.map((screenshot, index) => <img src={screenshot.url} key={index} class={`${style.screenshot} box-shadow mr-6`} />)}
       </div>
-    </div>
+    </section>
 )
 
 const Links = ({ app: { website, twitter, email } }) => {

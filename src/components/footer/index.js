@@ -1,3 +1,5 @@
+import style from './style.css'
+
 const Footer = ({ categories }) => (
   <footer class='primary border-t border-gray-light-3 pt-4'>
     <div className='container flex flex-wrap'>
@@ -22,7 +24,7 @@ const Links = () => {
 }
 
 const Categories = ({ categories }) => (
-  <ul class='hidden md:flex flex-wrap md:w-4/5'>
+  <ul class={`${style.categories} hidden md:flex flex-wrap md:w-4/5`}>
     {categories.map(category => (
       <li class='w-full md:w-1/3'>
         <a href={`/category/${category.name}`}>{category.name}</a>

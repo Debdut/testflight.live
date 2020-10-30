@@ -9,7 +9,7 @@
     "dev": "preact watch",
     "lint": "eslint src",
     "test": "jest",
-    "sitemap": "sitemap-generator https://testflight.live build/sitemap.xml"
+    "sitemap": "sitemap-generator https://testflight.live ---filepath build/sitemap.xml"
   },
   "eslintConfig": {
     "extends": "preact",
