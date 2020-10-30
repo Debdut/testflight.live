@@ -1,15 +1,22 @@
 import { Component } from 'preact'
 
 import AppList from '@/components/app-list'
+import HeadTag from '@/components/head'
 import Api from '@/api'
 
+
 class Category extends Component {
-  state = {
-    apps: []
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			apps: props.apps || []
+		}
+	}
 
   componentDidMount () {
-		this.fetchApps()
+		if (typeof window !== 'undefined') {
+			this.fetchApps()
+		}
 	}
 
 	fetchApps = async () => {
@@ -29,6 +36,7 @@ class Category extends Component {
 		return (
 			<div class='container'>
 				<AppList apps={apps} title={category} />
+				<HeadTag title={`Category - ${category}`} />
 			</div>
 		)
 	}

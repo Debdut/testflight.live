@@ -1,6 +1,6 @@
 import Helmet from 'preact-helmet'
 
-const Head = ({ title, description, url, image, manifest, twitter }) => (
+const Head = ({ title, description, url, image = {}, manifest, twitter }) => (
   <Helmet
     title={title}
     titleTemplate='%s | Testflight App Store'

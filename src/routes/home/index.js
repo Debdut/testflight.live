@@ -3,8 +3,6 @@ import { Component } from 'preact'
 import AppList from '@/components/app-list'
 import Api from '@/api'
 
-// import style from './style.css'
-
 class Home extends Component {
 	state = {
 		latest: [],

@@ -36,7 +36,7 @@ export default class Application extends Component {
 				<div class='pt-20 pb-10 primary'>
 					<Router onChange={this.handleRoute}>
 						<Home path='/' />
-						<Category path='category/:category' />
+						<Category path='category/:category' { ...props } />
 						<App path='app/:id' { ...props } />
 						<Search path='search/:search' />
 					</Router>
