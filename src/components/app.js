@@ -3,21 +3,40 @@ import { Router } from 'preact-router'
 
 import Header from './header'
 import Head from './head'
+import Footer from './footer'
 
 // Code-splitting is automated for routes
 import Home from '@/routes/home'
 import Category from '@/routes/category'
 import App from '@/routes/app'
 import Search from '@/routes/search'
-// import Profile from '../routes/profile'
+
+import Api from '@/api'
+
 
 export default class Application extends Component {
-	
+	constructor(props) {
+    super(props)
+    this.state = {
+      categories: []
+    }
+  }
+
+	componentDidMount () {
+    this.fetchCategories()
+  }
+
+  fetchCategories = async () => {
+    const categories = await (Api.Categories()
+      .get())
+    this.setState({ categories })
+  }
+
 	handleRoute = e => {
 		this.currentUrl = e.url
 	}
 
-	render(props) {
+	render(props, { categories }) {
 		return (
 			<div id='app'>
 				<Head
@@ -32,8 +51,8 @@ export default class Application extends Component {
   				twitter='@testflight_live'
   				manifest='/manifest.json'
 				/>
-				<Header />
-				<div class='pt-20 pb-10 primary'>
+				<Header categories={categories} />
+				<div class='py-20 primary'>
 					<Router onChange={this.handleRoute}>
 						<Home path='/' />
 						<Category path='category/:category' { ...props } />
@@ -41,6 +60,7 @@ export default class Application extends Component {
 						<Search path='search/:search' />
 					</Router>
 				</div>
+				<Footer categories={categories} />
 			</div>
 		)
 	}

@@ -2,7 +2,6 @@ import { Component } from 'preact'
 import { route } from 'preact-router'
 
 import CategoryList from '@/components/category-list'
-import Api from '@/api'
 
 import LogoSVG from '@/assets/icons/base-logo.svg'
 
@@ -12,26 +11,15 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: false,
-      categories: []
+      active: false
     }
-  }
-
-  componentDidMount () {
-    this.fetchCategories()
-  }
-
-  fetchCategories = async () => {
-    const categories = await (Api.Categories()
-      .get())
-    this.setState({ categories })
   }
 
   toggle = () => {
     this.setState({ active: !this.state.active })
   }
 
-  render ({}, { active, categories }) {
+  render ({ categories }, { active }) {
     return (
       <nav class='highlight opaque fixed w-full box-shadow overflow-y-scroll'>
         <div class='container flex justify-between'>
