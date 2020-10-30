@@ -18,7 +18,7 @@ export default class Application extends Component {
 	constructor(props) {
     super(props)
     this.state = {
-      categories: []
+      categories: props.categories || []
     }
   }
 
