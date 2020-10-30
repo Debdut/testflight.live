@@ -17,7 +17,7 @@ export default class Application extends Component {
 		this.currentUrl = e.url
 	}
 
-	render() {
+	render(props) {
 		return (
 			<div id='app'>
 				<Head
@@ -37,7 +37,7 @@ export default class Application extends Component {
 					<Router onChange={this.handleRoute}>
 						<Home path='/' />
 						<Category path='category/:category' />
-						<App path='app/:id' />
+						<App path='app/:id' { ...props } />
 						<Search path='search/:search' />
 					</Router>
 				</div>

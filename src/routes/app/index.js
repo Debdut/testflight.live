@@ -9,15 +9,20 @@ import HeadTag from '@/components/head'
 import style from './style.css'
 
 class App extends Component {
-  state = {
-    app: {
-      icons: [{}],
-      screenshots: [{}]
+  constructor(props) {
+    super(props)
+    this.state = {
+      app: props.app || {
+        icons: [{}],
+        screenshots: [{}]
+      }
     }
   }
 
   async componentWillMount () {
-		await this.fetchApp()
+    if (typeof window !== 'undefined') {
+		  await this.fetchApp()
+    }
 	}
 
 	fetchApp = async () => {
@@ -49,12 +54,13 @@ const Head = ({ app = {} }) => {
     return
   }
 
+  const title = `${app.name} - ${app.categories}`
   const description = (app.description || '').slice(0, 100)
   const twitter = `@${(app.twitter || '/testflight_live').split('/').pop()}`
 
   return (
     <HeadTag
-      title={app.name}
+      title={title}
       description={description}
       image={{
         favicon: app.icons[0].url,
@@ -92,9 +98,11 @@ class Header extends Component {
 }
   
 const Logo = ({ app: { icons, testflight_url }, get }) => {
-  const isMobile = window.screen.width <= 1000
-  if (get && !isMobile) {
-    return <QrCode link={testflight_url} class={`${style.qr} box-shadow`} />
+  if (typeof window !== 'undefined') {
+    const isMobile = window.screen.width <= 1000
+    if (get && !isMobile) {
+      return <QrCode link={testflight_url} class={`${style.qr} box-shadow`} />
+    }
   }
   return <img src={icons[0].url} class={`${style.logo} box-shadow`} />
 }

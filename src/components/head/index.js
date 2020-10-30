@@ -3,7 +3,7 @@ import Helmet from 'preact-helmet'
 const Head = ({ title, description, url, image, manifest, twitter }) => (
   <Helmet
     title={title}
-    titleTemplate='%s | Testflight.Live'
+    titleTemplate='%s | Testflight App Store'
     defaultTitle='Tesflight App Store'
     meta={[
       { name: 'description', content: description },
